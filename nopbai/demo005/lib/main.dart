@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Demo Bai Tap 2',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -44,7 +44,24 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(children: [Column(children: const[Icon(Icons.store),Text('Search store')],),
             Column(children: const[Icon(Icons.bookmark),Text('Bookmark')],),
             Column(children: const[Icon(Icons.add),Text('Mark as read')],)],),
-            Row(children: [Column(children: const[Text('Description'),Text('<p>1984 is a dystoplan novel by English author George Orwell published in 1949')],)],)],
+            Row(
+              children: [
+                Expanded(  // chứa một widget con và mở rộng or co lại không gian của row hoặc column or Flex
+                child: Container( // là 1 hộp chứa child, width, height, color, padding (lề giữa) có đối tượng edgeInsets lề all, 
+                // margin (lề xquanh), decoration (chỉnh hình dạng, hình ảnh) 
+                  padding: const EdgeInsets.all(10),
+                  child: const Text(
+                    'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
+                    'Alps. Situated 1,578 meters above sea level, it is one of the '
+                    'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
+                    'half-hour walk through pastures and pine forest, leads you to the '
+                    'lake, which warms to 20 degrees Celsius in the summer. Activities '
+                    'enjoyed here include rowing, and riding the summer toboggan run.',
+                    softWrap: true,
+                  ),
+                ),
+              ), ],
+                )],
         ),
       ),
     );
